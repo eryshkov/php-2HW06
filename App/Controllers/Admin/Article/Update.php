@@ -18,11 +18,11 @@ class Update extends Controller
                 header('Location:' . '/admin');
                 exit();
             }
-
+            
             $article->title = $_POST['title'];
             $article->content = $_POST['content'];
             $article->update();
-
+            
             header('Location:' . '/admin');
             return;
         }

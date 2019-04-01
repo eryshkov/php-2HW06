@@ -8,29 +8,29 @@ abstract class Controller
 {
     protected $view;
     protected $parameters = [];
-
+    
     public function __construct()
     {
         $this->view = new View();
     }
-
+    
     public function action(): void
     {
         if ($this->access()) {
             $this->handle();
             return;
         }
-
+        
         die('Доступ закрыт');
     }
-
+    
     protected function access(): bool
     {
         return true;
     }
-
+    
     abstract protected function handle(): void;
-
+    
     /**
      * @return array
      */
@@ -38,7 +38,7 @@ abstract class Controller
     {
         return $this->parameters;
     }
-
+    
     /**
      * @param array $parameters
      */

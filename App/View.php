@@ -13,14 +13,14 @@ use App\Models\Article;
 class View implements \Countable, \Iterator
 {
     use Magical;
-
+    
     protected $data = [];
-
+    
     public function display(string $template): void
     {
         include $template;
     }
-
+    
     public function render(string $template): string
     {
         ob_start();
@@ -29,12 +29,12 @@ class View implements \Countable, \Iterator
         ob_end_clean();
         return $contents;
     }
-
+    
     public function count(): int
     {
         return count($this->data);
     }
-
+    
     /**
      * Return the current element
      * @link https://php.net/manual/en/iterator.current.php
@@ -45,7 +45,7 @@ class View implements \Countable, \Iterator
     {
         return current($this->data);
     }
-
+    
     /**
      * Move forward to next element
      * @link https://php.net/manual/en/iterator.next.php
@@ -56,7 +56,7 @@ class View implements \Countable, \Iterator
     {
         next($this->data);
     }
-
+    
     /**
      * Return the key of the current element
      * @link https://php.net/manual/en/iterator.key.php
@@ -67,7 +67,7 @@ class View implements \Countable, \Iterator
     {
         return key($this->data);
     }
-
+    
     /**
      * Checks if current position is valid
      * @link https://php.net/manual/en/iterator.valid.php
@@ -79,7 +79,7 @@ class View implements \Countable, \Iterator
     {
         return null !== key($this->data);
     }
-
+    
     /**
      * Rewind the Iterator to the first element
      * @link https://php.net/manual/en/iterator.rewind.php

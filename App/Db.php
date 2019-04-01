@@ -10,7 +10,7 @@ class Db
      * @var \PDO
      */
     protected $dbh;
-
+    
     /**
      * Db constructor.
      * @throws DbErrorException
@@ -28,7 +28,7 @@ class Db
             throw new DbErrorException($e->getMessage());
         }
     }
-
+    
     /**
      * @param string $sql
      * @param array $params
@@ -51,7 +51,7 @@ class Db
             throw new DbErrorException($e->getMessage());
         }
     }
-
+    
     /**
      * @param string $sql
      * @param array $params
@@ -67,7 +67,7 @@ class Db
             throw new DbErrorException($e->getMessage());
         }
     }
-
+    
     /**
      * @return string
      */

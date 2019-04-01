@@ -1,3 +1,4 @@
 2019-03-28T12:23:14+03:00 | /Users/eugem/Developer/PHP/php-2HW05.mac/App/Models/Model.php | 56 | App\Exceptions\RecordNotFoundException | SELECT * FROM news WHERE id=:id (:id => 43)
 2019-03-28T12:24:13+03:00 | /Users/eugem/Developer/PHP/php-2HW05.mac/autoload.php | 14 | App\Exceptions\FileNotExistException | /Users/eugem/Developer/PHP/php-2HW05.mac/App/Controllers/Articlegh.php
 2019-04-01T21:55:32+03:00 | /Users/eugem/Developer/PHP/php-2HW05.mac/App/Models/Model.php | 56 | App\Exceptions\RecordNotFoundException | SELECT * FROM news WHERE id=:id (:id => 6)
+2019-04-01T23:15:15+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/App/Db.php | 51 | App\Exceptions\DbErrorException | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'php2hw06.news' doesn't exist

@@ -8,7 +8,7 @@ class Errors extends ExceptionModel
      * @var \Exception[]
      */
     protected $errors = [];
-
+    
     /**
      * @param \Exception $e
      */
@@ -16,7 +16,7 @@ class Errors extends ExceptionModel
     {
         $this->errors[] = $e;
     }
-
+    
     /**
      * @return \Exception[]
      */
@@ -24,7 +24,7 @@ class Errors extends ExceptionModel
     {
         return $this->errors;
     }
-
+    
     /**
      * @return bool
      */

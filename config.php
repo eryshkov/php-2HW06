@@ -1,7 +1,7 @@
 <?php
 
 $result = [
-    'db' => [
+    'db'  => [
         'driver'   => 'mysql',
         'host'     => 'php-2hw06.mac',
         'port'     => '8889',
