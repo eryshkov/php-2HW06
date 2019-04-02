@@ -4,6 +4,7 @@
  */
 
 use App\Logger;
+use App\Mailer;
 
 require __DIR__ . '/autoload.php';
 
@@ -15,6 +16,7 @@ try {
     $ctrl->action();
 } catch (\App\Exceptions\DbErrorException $e) {
     Logger::log($e);
+    Mailer::mail('Warning', $e->getMessage());
     $ctrl = new \App\Controllers\Errors\SmthWrong();
     $ctrl->action();
 } catch (\App\Exceptions\RecordNotFoundException $e) {
