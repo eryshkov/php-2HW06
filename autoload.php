@@ -1,12 +1,8 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
-/**
- * @param $class
- */
-function autoload($class)
+spl_autoload_register(function ($class)
 {
     $file = str_replace('\\', '/', $class) . '.php';
     require __DIR__ . '/' . $file;
-}
-
-spl_autoload_register('autoload');
+});
