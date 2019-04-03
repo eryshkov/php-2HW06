@@ -3,24 +3,29 @@
  * @var \App\Controllers\Controller $ctrl
  */
 
+use App\Controllers\Errors\RecNotFound;
+use App\Controllers\Errors\SmthWrong;
+use App\Exceptions\DbErrorException;
+use App\Exceptions\RecordNotFoundException;
 use App\Logger;
 use App\Mailer;
+use App\Router;
 
 require __DIR__ . '/autoload.php';
 
 try {
-    $router = new \App\Router();
+    $router = new Router();
     $ctrlClass = $router->getControllerName();
     $ctrl = new $ctrlClass;
     $ctrl->setParameters($router->getParameters());
     $ctrl->action();
-} catch (\App\Exceptions\DbErrorException $e) {
+} catch (DbErrorException $e) {
     Logger::log($e);
     Mailer::mail('Warning', $e->getMessage());
-    $ctrl = new \App\Controllers\Errors\SmthWrong();
+    $ctrl = new SmthWrong();
     $ctrl->action();
-} catch (\App\Exceptions\RecordNotFoundException $e) {
+} catch (RecordNotFoundException $e) {
     Logger::log($e);
-    $ctrl = new \App\Controllers\Errors\RecNotFound();
+    $ctrl = new RecNotFound();
     $ctrl->action();
 }
