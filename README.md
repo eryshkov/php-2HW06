@@ -19,6 +19,7 @@
 ## Main functionality
 * PSR-standards
 * Composer
+* swiftmailer/swiftmailer is used
 * MVC pattern
 * Active Record pattern
 * uses MySQL database
