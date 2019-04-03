@@ -8,14 +8,14 @@ class Create extends Controller
 {
     /**
      * @throws \App\Exceptions\DbErrorException
+     * @throws \App\Exceptions\Errors
      */
     protected function handle(): void
     {
         if (isset($_POST['title'], $_POST['content'])) {
             $article = new \App\Models\Article();
             
-            $article->title = $_POST['title'];
-            $article->content = $_POST['content'];
+            $article->fill($_POST);
             $article->insert();
             
             header('Location:' . '/admin');

@@ -111,21 +111,18 @@ abstract class Model
      */
     public function fill(array $data): void
     {
-        $props = get_object_vars($this);
-        $difference = array_diff_key($props, $data);
-        if (empty($difference)) {
-            foreach ($props as $key => $value) {
-                $this->$key = $data[$key];
-            }
-            return;
-        }
-
         $errors = new Errors();
-        foreach ($difference as $key => $value) {
-            $errors->add(new FillErrorException($key . ' is not found'));
+        foreach ($data as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->$key = $value;
+            } else {
+                $errors->add(new FillErrorException($key . ' is not found'));
+            }
         }
-
-        throw $errors;
+        
+        if (!$errors->isEmpty()) {
+            throw $errors;
+        }
     }
 
     /**

@@ -9,6 +9,7 @@ class Update extends Controller
     /**
      * @throws \App\Exceptions\DbErrorException
      * @throws \App\Exceptions\RecordNotFoundException
+     * @throws \App\Exceptions\Errors
      */
     protected function handle(): void
     {
@@ -19,8 +20,7 @@ class Update extends Controller
                 exit();
             }
             
-            $article->title = $_POST['title'];
-            $article->content = $_POST['content'];
+            $article->fill($_POST);
             $article->update();
             
             header('Location:' . '/admin');
