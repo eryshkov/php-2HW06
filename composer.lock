@@ -119,16 +119,16 @@
         },
         {
             "name": "eryshkov/multiexception",
-            "version": "1.17",
+            "version": "1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eryshkov/multiexception.git",
-                "reference": "0aa775bf8dd0a01f22228da425847400eba48f7e"
+                "reference": "49ad1bc4150e321be3e111b92a82e967983a299f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eryshkov/multiexception/zipball/0aa775bf8dd0a01f22228da425847400eba48f7e",
-                "reference": "0aa775bf8dd0a01f22228da425847400eba48f7e",
+                "url": "https://api.github.com/repos/eryshkov/multiexception/zipball/49ad1bc4150e321be3e111b92a82e967983a299f",
+                "reference": "49ad1bc4150e321be3e111b92a82e967983a299f",
                 "shasum": ""
             },
             "type": "library",
@@ -137,12 +137,23 @@
                     "MultiException\\": "src/MultiException/"
                 }
             },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgenii Ryshkov",
+                    "email": "eryshkov@gmail.com",
+                    "homepage": "https://github.com/eryshkov",
+                    "role": "Developer"
+                }
+            ],
             "description": "Exceptions all in one",
             "support": {
-                "source": "https://github.com/eryshkov/multiexception/tree/1.17",
+                "source": "https://github.com/eryshkov/multiexception/tree/1.18",
                 "issues": "https://github.com/eryshkov/multiexception/issues"
             },
-            "time": "2019-04-03T13:47:44+00:00"
+            "time": "2019-04-03T14:01:36+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
