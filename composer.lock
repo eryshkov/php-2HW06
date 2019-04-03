@@ -119,30 +119,30 @@
         },
         {
             "name": "eryshkov/multiexception",
-            "version": "1.13",
+            "version": "1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eryshkov/multiexception.git",
-                "reference": "5da588a9e3b44fe16ea63bd29fa746e0d2536533"
+                "reference": "0aa775bf8dd0a01f22228da425847400eba48f7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eryshkov/multiexception/zipball/5da588a9e3b44fe16ea63bd29fa746e0d2536533",
-                "reference": "5da588a9e3b44fe16ea63bd29fa746e0d2536533",
+                "url": "https://api.github.com/repos/eryshkov/multiexception/zipball/0aa775bf8dd0a01f22228da425847400eba48f7e",
+                "reference": "0aa775bf8dd0a01f22228da425847400eba48f7e",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "": "src/"
+                    "MultiException\\": "src/MultiException/"
                 }
             },
             "description": "Exceptions all in one",
             "support": {
-                "source": "https://github.com/eryshkov/multiexception/tree/1.13",
+                "source": "https://github.com/eryshkov/multiexception/tree/1.17",
                 "issues": "https://github.com/eryshkov/multiexception/issues"
             },
-            "time": "2019-04-03T12:54:56+00:00"
+            "time": "2019-04-03T13:47:44+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
