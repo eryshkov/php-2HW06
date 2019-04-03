@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83b6abf6d841cdb5b1ce056b8fcfe973",
+    "content-hash": "847667a3ce61992e4b92b2695e558f82",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -116,6 +116,33 @@
                 "validator"
             ],
             "time": "2018-12-04T22:38:24+00:00"
+        },
+        {
+            "name": "eryshkov/multiexception",
+            "version": "1.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eryshkov/multiexception.git",
+                "reference": "5da588a9e3b44fe16ea63bd29fa746e0d2536533"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eryshkov/multiexception/zipball/5da588a9e3b44fe16ea63bd29fa746e0d2536533",
+                "reference": "5da588a9e3b44fe16ea63bd29fa746e0d2536533",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "description": "Exceptions all in one",
+            "support": {
+                "source": "https://github.com/eryshkov/multiexception/tree/1.13",
+                "issues": "https://github.com/eryshkov/multiexception/issues"
+            },
+            "time": "2019-04-03T12:54:56+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

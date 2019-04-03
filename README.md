@@ -13,6 +13,7 @@
 ## Информация для проверяющего
 * в задаче №2 выбрана и установлена библиотека swiftmailer/swiftmailer
 * дамп БД в папке `db_dump`
+* решение для задачи №4 находится [здесь](https://github.com/eryshkov/multiexception)
 * применена дополнительная настройка web-сервера nginx:
  <img src="/screens/nginx.png" width="50%">
 
