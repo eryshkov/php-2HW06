@@ -28,7 +28,8 @@ try {
     Logger::log($e);
     $ctrl = new RecNotFound();
     $ctrl->action();
-} catch (Throwable $e) {
-    $ctrl = new \App\Controllers\Errors\SmthWrong();
+} catch (Error $e) {
+    Logger::log($e);
+    $ctrl = new SmthWrong();
     $ctrl->action();
 }

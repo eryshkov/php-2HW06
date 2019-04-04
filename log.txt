@@ -3,3 +3,4 @@
 2019-04-01T21:55:32+03:00 | /Users/eugem/Developer/PHP/php-2HW05.mac/App/Models/Model.php | 56 | App\Exceptions\RecordNotFoundException | SELECT * FROM news WHERE id=:id (:id => 6)
 2019-04-01T23:15:15+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/App/Db.php | 51 | App\Exceptions\DbErrorException | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'php2hw06.news' doesn't exist
 2019-04-03T01:00:16+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/App/Db.php | 28 | App\Exceptions\DbErrorException | SQLSTATE[HY000] [1044] Access denied for user 'eug'@'localhost' to database 'php2hw064'
+2019-04-04T14:43:55+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 19 | Error | Class '\App\Controllers\Jjk' not found

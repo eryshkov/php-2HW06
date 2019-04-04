@@ -4,7 +4,7 @@ namespace App;
 
 class Logger
 {
-    public static function log(\Exception $data): void
+    public static function log(\Throwable $data): void
     {
         $config = require __DIR__ . '/../config.php';
         $storage = $config['log'];
