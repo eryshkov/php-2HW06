@@ -5,6 +5,7 @@
 
 use App\Controllers\Errors\RecNotFound;
 use App\Controllers\Errors\SmthWrong;
+use App\Exceptions\ControllerNotFoundException;
 use App\Exceptions\DbErrorException;
 use App\Exceptions\RecordNotFoundException;
 use App\Logger;
@@ -16,6 +17,9 @@ require __DIR__ . '/autoload.php';
 try {
     $router = new Router();
     $ctrlClass = $router->getControllerName();
+    if (!class_exists($ctrlClass)) {
+        throw new ControllerNotFoundException($ctrlClass);
+    }
     $ctrl = new $ctrlClass;
     $ctrl->setParameters($router->getParameters());
     $ctrl->action();
@@ -28,7 +32,7 @@ try {
     Logger::log($e);
     $ctrl = new RecNotFound();
     $ctrl->action();
-} catch (Error $e) {
+} catch (ControllerNotFoundException $e) {
     Logger::log($e);
     $ctrl = new SmthWrong();
     $ctrl->action();
