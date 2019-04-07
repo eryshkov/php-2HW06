@@ -3,6 +3,7 @@
  * @var \App\Controllers\Controller $ctrl
  */
 
+use App\Controllers\Errors\Error404;
 use App\Controllers\Errors\RecNotFound;
 use App\Controllers\Errors\SmthWrong;
 use App\Exceptions\ControllerNotFoundException;
@@ -34,6 +35,6 @@ try {
     $ctrl->action();
 } catch (ControllerNotFoundException $e) {
     Logger::log($e);
-    $ctrl = new SmthWrong();
+    $ctrl = new Error404();
     $ctrl->action();
 }
