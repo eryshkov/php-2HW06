@@ -3,3 +3,4 @@
 2019-04-01T23:15:15+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/App/Db.php | 51 | App\Exceptions\DbErrorException | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'php2hw06.news' doesn't exist
 2019-04-03T01:00:16+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/App/Db.php | 28 | App\Exceptions\DbErrorException | SQLSTATE[HY000] [1044] Access denied for user 'eug'@'localhost' to database 'php2hw064'
 2019-04-04T15:26:02+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 21 | App\Exceptions\ControllerNotFoundException | \App\Controllers\Jjup
+2019-04-07T16:34:29+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 22 | App\Exceptions\ControllerNotFoundException | \App\Controllers\Favicon.ico
