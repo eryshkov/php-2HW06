@@ -8,7 +8,7 @@ class User extends Model
      * @var string
      */
     protected static $table = 'users';
-
+    
     /**
      * @var string
      */
@@ -17,5 +17,5 @@ class User extends Model
      * @var string
      */
     public $password;
-
+    
 }

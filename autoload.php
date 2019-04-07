@@ -1,8 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-spl_autoload_register(function ($class)
-{
+spl_autoload_register(function ($class) {
     $file = str_replace('\\', '/', $class) . '.php';
     if (file_exists($file)) {
         require __DIR__ . '/' . $file;
