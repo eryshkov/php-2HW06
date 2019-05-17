@@ -4,7 +4,7 @@ namespace App\Controllers\Admin\Article;
 
 use App\Controllers\BaseController;
 
-class Edit extends BaseController
+class EditPresenter extends BaseController
 {
     /**
      * @throws \App\Exceptions\DbErrorException
@@ -12,10 +12,10 @@ class Edit extends BaseController
      */
     protected function handle(): void
     {
-        $parameter = $this->getParameters();
+        $id = $this->getRequestParameters()['id'];
         
-        if (!empty($parameter)) {
-            $this->view->article = \App\Models\Article::findById(reset($parameter));
+        if (isset($id)) {
+            $this->view->article = \App\Models\Article::findById($id);
             if (false === $this->view->article) {
                 header('Location:' . '/admin');
                 return;
