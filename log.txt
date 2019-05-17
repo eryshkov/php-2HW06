@@ -5,3 +5,5 @@
 2019-04-04T15:26:02+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 21 | App\Exceptions\ControllerNotFoundException | \App\Controllers\Jjup
 2019-04-07T16:34:29+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 22 | App\Exceptions\ControllerNotFoundException | \App\Controllers\Favicon.ico
 2019-05-17T13:12:48+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/App/Models/Model.php | 55 | App\Exceptions\RecordNotFoundException | SELECT * FROM news WHERE id=:id (:id => 0)
+2019-05-17T13:17:40+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 22 | App\Exceptions\ControllerNotFoundException | App\Controllers\Admin\Article\EditPresenter
+2019-05-17T13:17:43+03:00 | /Users/eugem/Developer/PHP/php-2HW06.mac/index.php | 22 | App\Exceptions\ControllerNotFoundException | App\Controllers\Admin\Article\InsertPresenter
