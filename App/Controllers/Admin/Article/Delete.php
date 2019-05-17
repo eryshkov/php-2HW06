@@ -12,17 +12,17 @@ class Delete extends BaseController
      */
     protected function handle(): void
     {
-        $parameter = $this->getParameters();
+        $id = $this->getRequestParameters()['id'];
         
-        if (!empty($parameter)) {
-            $article = \App\Models\Article::findById(reset($parameter));
-            if (false !== $article) {
-                $article->delete();
-                header('Location:' . '/admin');
-                return;
-            }
+        if (!isset($id)) {
+            header('Location:' . '/admin');
         }
-        
-        header('Location:' . '/admin');
+    
+        $article = \App\Models\Article::findById($id);
+        if (false !== $article) {
+            $article->delete();
+            header('Location:' . '/admin');
+            return;
+        }
     }
 }
