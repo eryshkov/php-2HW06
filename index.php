@@ -3,6 +3,7 @@
  * @var \App\Controllers\BaseController $ctrl
  */
 
+use App\Controllers\BaseController;
 use App\Controllers\Errors\Error404;
 use App\Controllers\Errors\RecNotFound;
 use App\Controllers\Errors\SmthWrong;
@@ -20,8 +21,8 @@ try {
     if (!class_exists($ctrlClass)) {
         throw new ControllerNotFoundException($ctrlClass);
     }
+    /** @var BaseController $ctrl */
     $ctrl = new $ctrlClass;
-    $ctrl->setParameters($router->getParameters());
     $ctrl->action();
 } catch (DbErrorException $e) {
     Logger::log($e);
