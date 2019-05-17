@@ -16,8 +16,7 @@ use App\Router;
 require __DIR__ . '/autoload.php';
 
 try {
-    $router = new Router();
-    $ctrlClass = $router->getControllerName();
+    $ctrlClass = (new Router())->getControllerName();
     if (!class_exists($ctrlClass)) {
         throw new ControllerNotFoundException($ctrlClass);
     }

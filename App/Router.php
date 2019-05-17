@@ -4,48 +4,89 @@ namespace App;
 
 class Router
 {
-    protected $parameters = [];
-    protected $controllerName = '';
-    
-    public function __construct()
+    /**
+     * @return string|null
+     */
+    protected function cleanUpUri(): ?string
     {
         $uri = $_SERVER['REQUEST_URI'];
-        $uriParts = explode('/', $uri);
         
-        $goodURIParts = [];
-        foreach ($uriParts as $part) {
-            if (!isset($part) || '' === $part) {
-                continue;
-            }
-            
-            if (is_numeric($part)) {
-                $this->parameters[] = $part;
-                continue;
-            }
-            
-            $goodURIParts[] = ucfirst($part);
-        }
-        
-        if (empty($goodURIParts)) {
-            $goodURIParts[] = 'Index';
-        }
-        
-        $this->controllerName = '\App\Controllers\\' . implode('\\', $goodURIParts);
+        return preg_replace('~\/*$~', '', $uri);
     }
     
     /**
-     * @return string
+     * @return string|null
      */
-    public function getControllerName(): string
+    public function getControllerName(): ?string
     {
-        return $this->controllerName;
+        $uri = $this->cleanUpUri();
+        
+        $config = Config::instance();
+        $routes = $config->data['routes'];
+        
+        $regExps = [];
+        foreach ($routes as $routePattern => $className) {
+            $res = str_replace('/', '\/', $routePattern);
+            $res = preg_replace('~{.+}~', '.+', $res);
+            if (isset($res)) {
+                $regExps[$className] = '~^' . $res . '$~';
+            }
+        }
+        
+        foreach ($regExps as $className => $regExp) {
+            if (1 === preg_match($regExp, $uri)) {
+                return $className;
+            }
+        }
+        
+        return null;
     }
     
     /**
-     * @return array
+     * @return array|null
      */
-    public function getParameters(): array
+    public function getRequestParameters(): ?array
     {
-        return $this->parameters;
+        $config = Config::instance();
+        $flipRoutes = array_flip($config->data['routes']);
+        
+        $controller = $this->getControllerName();
+        if (!isset($controller)) {
+            return null;
+        }
+        
+        $route = $flipRoutes[$controller];
+        
+        if (!isset($route)) {
+            return null;
+        }
+        
+        preg_match_all('~(?:{.+})~U', $route, $parameterNames);
+        foreach ($parameterNames as $key => $parameterName) {
+            $parameterNames[$key] = str_replace(['{', '}'], '', $parameterName);
+        }
+        
+        $parameterNames = reset($parameterNames);
+        
+        if (!isset($parameterNames)) {
+            return null;
+        }
+        
+        $regExp = '~' . $route . '~J';
+        foreach ($parameterNames as $parameterName) {
+            $regExp = str_replace($parameterName, sprintf('(?P<%s>.+)', $parameterName), $regExp);
+        }
+        $regExp = str_replace(['/', '{', '}'], ['\/', '', ''], $regExp);
+        
+        preg_match_all($regExp, $this->cleanUpUri(), $parameterValues);
+        
+        $result = null;
+        foreach ($parameterNames as $parameterName) {
+            if (isset($parameterValues[$parameterName])) {
+                $result[$parameterName] = reset($parameterValues[$parameterName]);
+            }
+        }
+        
+        return $result;
     }
 }
