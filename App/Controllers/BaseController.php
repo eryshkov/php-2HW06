@@ -2,12 +2,12 @@
 
 namespace App\Controllers;
 
+use App\Router;
 use App\View;
 
 abstract class BaseController
 {
     protected $view;
-    protected $parameters = [];
     
     public function __construct()
     {
@@ -32,18 +32,10 @@ abstract class BaseController
     abstract protected function handle(): void;
     
     /**
-     * @return array
+     * @return array|null
      */
-    public function getParameters(): array
+    public function getRequestParameters(): ?array
     {
-        return $this->parameters;
-    }
-    
-    /**
-     * @param array $parameters
-     */
-    public function setParameters(array $parameters): void
-    {
-        $this->parameters = $parameters;
+        return (new Router())->getRequestParameters();
     }
 }
