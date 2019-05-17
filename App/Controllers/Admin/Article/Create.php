@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Admin\Article;
 
-use App\Controllers\Controller;
+use App\Controllers\BaseController;
 
-class Create extends Controller
+class Create extends BaseController
 {
     /**
      * @throws \App\Exceptions\DbErrorException

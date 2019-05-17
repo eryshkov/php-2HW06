@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Errors;
 
-use App\Controllers\Controller;
+use App\Controllers\BaseController;
 
-class SmthWrong extends Controller
+class SmthWrong extends BaseController
 {
     protected function handle(): void
     {

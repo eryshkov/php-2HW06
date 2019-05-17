@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Admin extends Controller
+class Admin extends BaseController
 {
     /**
      * @throws \App\Exceptions\DbErrorException

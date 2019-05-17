@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \App\Controllers\Controller $ctrl
+ * @var \App\Controllers\BaseController $ctrl
  */
 
 use App\Controllers\Errors\Error404;

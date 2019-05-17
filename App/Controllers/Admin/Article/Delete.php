@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Admin\Article;
 
-use App\Controllers\Controller;
+use App\Controllers\BaseController;
 
-class Delete extends Controller
+class Delete extends BaseController
 {
     /**
      * @throws \App\Exceptions\DbErrorException

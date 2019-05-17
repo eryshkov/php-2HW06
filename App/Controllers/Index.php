@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Index extends Controller
+class Index extends BaseController
 {
     /**
      * @throws \App\Exceptions\DbErrorException

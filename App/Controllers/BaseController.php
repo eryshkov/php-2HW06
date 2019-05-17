@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\View;
 
-abstract class Controller
+abstract class BaseController
 {
     protected $view;
     protected $parameters = [];

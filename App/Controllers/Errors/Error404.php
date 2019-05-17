@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Errors;
 
-use App\Controllers\Controller;
+use App\Controllers\BaseController;
 
-class Error404 extends Controller
+class Error404 extends BaseController
 {
     protected function handle(): void
     {

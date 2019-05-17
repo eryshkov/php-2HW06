@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Article extends Controller
+class Article extends BaseController
 {
     /**
      * @throws \App\Exceptions\DbErrorException
