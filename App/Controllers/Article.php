@@ -10,9 +10,9 @@ class Article extends BaseController
      */
     protected function handle(): void
     {
-        $parameter = $this->getParameters();
+        $id = $this->getRequestParameters()['id'];
         
-        $this->view->article = \App\Models\Article::findById(reset($parameter));
+        $this->view->article = \App\Models\Article::findById($id);
         $this->view->display(__DIR__ . '/../../templates/article.php');
     }
 }
