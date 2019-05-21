@@ -70,4 +70,11 @@ class Article extends Model
         
         return false;
     }
+    
+    public function validateTitle(): void
+    {
+        if (empty(trim($this->title))) {
+            throw new \LogicException('Title can\'t be empty');
+        }
+    }
 }
