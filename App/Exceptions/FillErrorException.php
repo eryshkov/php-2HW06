@@ -2,6 +2,6 @@
 
 namespace App\Exceptions;
 
-class FillErrorException extends ExceptionModel
+class FillErrorException extends BaseException
 {
 }

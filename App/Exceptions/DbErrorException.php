@@ -2,6 +2,6 @@
 
 namespace App\Exceptions;
 
-class DbErrorException extends ExceptionModel
+class DbErrorException extends BaseException
 {
 }

@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-class ControllerNotFoundException extends ExceptionModel
+class ControllerNotFoundException extends BaseException
 {
     /**
      * ControllerNotFoundException constructor.
