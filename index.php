@@ -26,7 +26,8 @@ try {
     $ctrl->action();
 } catch (DbErrorException $e) {
     Logger::log($e);
-    Mailer::mail('Warning', $e->getMessage());
+    $mailer = new Mailer();
+    $mailer->mail('Warning', $e->getMessage());
     $ctrl = new SmthWrong();
     $ctrl->action();
 } catch (RecordNotFoundException $e) {

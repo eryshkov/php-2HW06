@@ -13,7 +13,7 @@ class Mailer
     public static $destination = 'eryshkov@gmail.com';
     public static $smtpHost = 'smtp.mail.ru';
     
-    public static function mail(string $subjText, string $messageText): int
+    public function mail(string $subjText, string $messageText): int
     {
         $transport = new Swift_SmtpTransport(self::$smtpHost, 465);
         $transport->setEncryption('SSL');
